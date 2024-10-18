@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/jquery.typeit/4.4.0/typeit.min.js"></script>
+    <script src="randColor.js"></script>
+</head>
+<body>
+
+    <p id="type">
+        <span id="typeText">Кликни сюда</span>
+    </p>
+    <span>Тестикус</span><br>
+    <label for="colorOptions">Выберите цвет:</label>
+    <select id="colorOptions">
+        <option value="red">Красный</option>
+        <option value="green">Зеленый</option>
+        <option value="blue">Синий</option>
+        <option value="rainbow">Радуга</option>
+        <option value="all">Случайный цвет</option>
+    </select>
+    <button>Применить</button>
+
+    <script>
+		 $('button').click(function() {
+        const selectedColor = $('#colorOptions').val();
+        $('span').randColorText(selectedColor);
+    });
+    </script>
+
+
+
+
+
+
+
+    <script>
+            $('#type').click(function() {
+                $('#typeText').html('').typeIt({
+                    strings: 'Помогите! Этот человек запер меня внутри компьютера и заставляет печатать',
+                    speed: 50, 
+                    autoStart: false,
+                    loop:true
+                })
+            })
+    </script>
+</body>
+</html>
